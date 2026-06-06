@@ -182,3 +182,67 @@ footer p a {
 footer p a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  section
+  {
+    min-height: fit-content;
+    padding: 30px;
+  }
+  header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  header nav h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header nav ul {
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+  }
+  #hero {
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
+
+  #hero #left-side,
+  #hero #right-side {
+    width: 100%;
+  }
+
+  #hero #left-side h2 {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  #hero #right-side {
+    margin-top: 10px;
+  }
+  #hero #right-side img {
+    height: auto;
+  }
+
+  #features {
+    padding-top: 10px;
+  }
+
+  #card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #card-container .card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
