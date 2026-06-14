@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Step Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+
+      <div class="form-box">
+        <div class="step active" id="step1">
+          <h2>Personal Info</h2>
+
+          <input type="text" id="name" placeholder="Enter Name" />
+          <input type="number" id="age" placeholder="Enter Age" />
+          <input type="text" id="phone" placeholder="03XXXXXXXXX" />
+
+          <button onclick="nextStep1()">Next</button>
+        </div>
+
+        <div class="step" id="step2">
+          <h2>Account Details</h2>
+
+          <input type="email" id="email" placeholder="Enter Email" />
+          <input type="password" id="password" placeholder="Password" />
+          <p id="strength"></p>
+
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+          />
+
+          <div class="buttons">
+            <button onclick="prevStep(1)">Back</button>
+            <button onclick="nextStep2()">Next</button>
+          </div>
+        </div>
+
+        <div class="step" id="step3">
+          <h2>Confirmation</h2>
+
+          <div id="summary"></div>
+
+          <div class="buttons">
+            <button onclick="prevStep(2)">Back</button>
+            <button onclick="submitForm()">Submit</button>
+          </div>
+        </div>
+      </div>
+
+      <h2>Saved Entries</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
