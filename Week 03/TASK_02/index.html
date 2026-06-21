@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawCare | Premium Pet Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316',
+                        secondary: '#7c3aed',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Outfit', sans-serif; }
+    </style>
+</head>
+<body class="bg-orange-50/30 text-gray-800">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-orange-100 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary flex items-center gap-2">
+                <i class="fa-solid fa-paw"></i> PawCare
+            </a>
+            
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#home" class="hover:text-primary transition">Home</a>
+                <a href="#features" class="hover:text-primary transition">Features</a>
+                <a href="#contact" class="hover:text-primary transition">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleModal()" class="bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-600 transition shadow-lg shadow-orange-200">
+                    Sign Up
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-gray-600">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-orange-100 p-6 space-y-4 shadow-xl">
+            <a href="#home" onclick="toggleMobileMenu()" class="block font-medium hover:text-primary">Home</a>
+            <a href="#features" onclick="toggleMobileMenu()" class="block font-medium hover:text-primary">Features</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block font-medium hover:text-primary">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="relative overflow-hidden pt-16 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900 text-center md:text-left">
+                    Keeping Your Pets <span class="text-primary">Happy, Healthy,</span> and Safe
+                </h1>
+                <p class="text-lg text-gray-600 max-w-lg mx-auto md:mx-0 text-center md:text-left">
+                    Book trusted pet care services, track your pet’s health, and get reminders all from one platform. The ultimate companion for every pet parent.
+                </p>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="#features" class="bg-secondary text-white px-8 py-3 rounded-xl font-bold hover:opacity-90 transition inline-block">
+                        Learn More
+                    </a>
+                    <button onclick="toggleModal()" class="border-2 border-primary text-primary px-8 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition">
+                        Join Now
+                    </button>
+                </div>
+            </div>
+            <div class="relative mt-8 md:mt-0">
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-orange-200 rounded-full blur-3xl opacity-50"></div>
+                <img src="https://www.allianz.ie/blog/your-pet/pet-dental-care-is-vital/_jcr_content/root/stage/stageimage.img.82.3360.jpeg/1727883109843/cute-happy-pup.jpeg" 
+                     alt="Happy Dog" 
+                     class="relative z-10 rounded-[2.5rem] shadow-2xl border-8 border-white transform hover:rotate-2 transition-transform duration-500 w-full max-w-md mx-auto md:max-w-none">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="bg-white py-24 px-6 text-center">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Features</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Everything you need to care for your pet in one place. Professional tools for professional pet parents.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-orange-50 border border-orange-100 hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 mx-auto shadow-sm group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Easy Vet Appointments</h3>
+                    <p class="text-gray-600">Book trusted veterinarians quickly and manage appointments with ease.</p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-orange-50 border border-orange-100 hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 mx-auto shadow-sm group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Health Monitoring</h3>
+                    <p class="text-gray-600">Keep track of vaccinations, medications, and your pet’s wellness history.</p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-orange-50 border border-orange-100 hover:shadow-xl transition-all group">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 mx-auto shadow-sm group-hover:bg-primary group-hover:text-white transition">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Smart Pet Reminders</h3>
+                    <p class="text-gray-600">Never miss feeding time, grooming sessions, or medical checkups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="signup-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-md rounded-3xl overflow-hidden shadow-2xl transform scale-90 opacity-0 transition-all duration-300" id="modal-box">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Join PawCare</h2>
+                    <button onclick="toggleModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                </div>
+                
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Success!'); toggleModal();">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Full Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-primary outline-none transition" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Email Address</label>
+                        <input type="email" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-primary outline-none transition" placeholder="john@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Pet's Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-primary outline-none transition" placeholder="Buddy">
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-orange-600 transition mt-4">
+                        Create Account
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact" class="bg-gray-900 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl font-bold mb-2">PawCare</h2>
+                <p class="text-gray-400">Making pet parenthood easier since 2026.</p>
+            </div>
+            <div class="flex gap-6 text-2xl">
+                <a href="mailto:contact@pawcare.com" class="hover:text-primary transition"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" class="hover:text-primary transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-primary transition"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+            &copy; 2026 PawCare | All rights are reserved.
+        </div>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('signup-modal');
+        const modalBox = document.getElementById('modal-box');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleModal() {
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.add('opacity-100');
+                    modalBox.classList.remove('scale-90', 'opacity-0');
+                    modalBox.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                modalBox.classList.remove('scale-100', 'opacity-100');
+                modalBox.classList.add('scale-90', 'opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

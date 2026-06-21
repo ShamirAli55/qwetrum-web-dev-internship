@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #e9f5f3;
+  transition: all 0.3s ease-in-out;
+}
+section {
+  min-height: 100vh;
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  background-color: #d97757;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding: 20px 30px;
+  color: white;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+header nav ul a {
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 700;
+  color: white;
+}
+header nav ul a:hover {
+  color: #d44312;
+}
+#hero {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+#hero #left-side {
+  width: 50%;
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#hero #left-side h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+}
+
+#hero #left-side p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  letter-spacing: 0.5px;
+  line-height: 25px;
+  padding: 10px;
+  padding-left: 0;
+}
+
+#hero #left-side a {
+  text-decoration: none;
+  background-color: #6a994e;
+  padding: 20px 25px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: white;
+  font-weight: 600;
+  max-width: fit-content;
+}
+#hero #left-side a:hover {
+  background-color: #3d5430;
+}
+#hero #right-side {
+  width: 50%;
+  height: 100%;
+}
+#hero #right-side img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px;
+  height: 400px;
+  border: 1px solid #7fb069;
+}
+#features {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#features #main-heading {
+  text-align: center;
+}
+#features #main-heading h1 {
+  font-weight: 700;
+  font-size: 2.5em;
+}
+#features #main-heading p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  letter-spacing: 0.5px;
+  line-height: 25px;
+  padding: 10px;
+  padding-left: 0;
+  letter-spacing: -0.5px;
+}
+#card-container {
+  display: flex;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  gap: 15px;
+}
+#card-container .card {
+  border: 1px double #d978577b;
+  height: 350px;
+  width: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  justify-content: space-around;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+#card-container .card h1 {
+  font-size: 2em;
+  font-weight: bolder;
+}
+#card-container .card p {
+  font-size: 1.2em;
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  font-weight: normal;
+}
+
+#card-container .card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+footer {
+  width: 100%;
+  background-color: #d97757;
+  text-align: center;
+  padding: 30px;
+  font-weight: 600;
+  color: white;
+}
+
+footer p {
+  margin-top: 10px;
+}
+
+footer p a {
+  color: #fff4ec;
+  text-decoration: none;
+}
+
+footer p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  section
+  {
+    min-height: fit-content;
+    padding: 30px;
+  }
+  header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  header nav h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header nav ul {
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+  }
+  #hero {
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
+
+  #hero #left-side,
+  #hero #right-side {
+    width: 100%;
+  }
+
+  #hero #left-side h2 {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  #hero #right-side {
+    margin-top: 10px;
+  }
+  #hero #right-side img {
+    height: auto;
+  }
+
+  #features {
+    padding-top: 10px;
+  }
+
+  #card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #card-container .card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
