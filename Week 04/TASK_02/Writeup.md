@@ -57,15 +57,5 @@ I still have a long way to go but I can now build something from scratch and put
 
 2. **Back-end Basics** - right now the cart only lives in the browser. I want to learn Node.js so I can build a proper backend, save user accounts, and store order history in a real database.
 
-## Demo Video
 
-[paste your YouTube or Loom link here]
-
-**Live URL:** https://your-github-username.github.io/week03-shopdark/
-
-## How to Deploy (GitHub Pages)
-
-1. Push the contents of TASK_01 to a GitHub repo
-2. Go to Settings > Pages
-3. Set the source to the main branch, root folder
-4. GitHub gives you a live link within about a minute
+**Live URL:** [https://shamirali55.github.io/qwetrum-web-dev/](https://shamirali55.github.io/qwetrum-web-dev/)
