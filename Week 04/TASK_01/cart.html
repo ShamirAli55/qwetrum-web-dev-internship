@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopDark — Cart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">ShopDark</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="active cart-link">
+        Cart
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header container">
+      <h1>Your Cart</h1>
+    </div>
+
+    <div class="cart-layout container">
+      <div id="cart-container"></div>
+      <div id="cart-summary"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShopDark. All rights reserved.</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

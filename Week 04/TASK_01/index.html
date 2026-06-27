@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopDark — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">ShopDark</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html" class="cart-link">
+        Cart
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <h1>Your Style.<br><span>Your Store.</span></h1>
+        <p>Shop the latest gear, gadgets, and essentials — all in one place.</p>
+        <div class="hero-search">
+          <input type="text" id="hero-search" placeholder="Search products…">
+          <button class="btn-primary" onclick="heroSearch()">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section container">
+      <h2 class="section-title">Browse by <span>Category</span></h2>
+      <div class="categories-grid">
+        <a href="shop.html?q=Electronics" class="cat-card">
+          <div class="cat-icon">📱</div>
+          <p>Electronics</p>
+        </a>
+        <a href="shop.html?q=Clothing" class="cat-card">
+          <div class="cat-icon">👕</div>
+          <p>Clothing</p>
+        </a>
+        <a href="shop.html?q=Footwear" class="cat-card">
+          <div class="cat-icon">👟</div>
+          <p>Footwear</p>
+        </a>
+        <a href="shop.html?q=Accessories" class="cat-card">
+          <div class="cat-icon">👜</div>
+          <p>Accessories</p>
+        </a>
+        <a href="shop.html?q=Sports" class="cat-card">
+          <div class="cat-icon">🏃</div>
+          <p>Sports</p>
+        </a>
+        <a href="shop.html?q=Kitchen" class="cat-card">
+          <div class="cat-icon">☕</div>
+          <p>Kitchen</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Featured -->
+    <section class="section container">
+      <h2 class="section-title">Featured <span>Products</span></h2>
+      <div class="product-grid" id="featured-grid"></div>
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="shop.html" class="btn-secondary">View All Products →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShopDark. All rights reserved.</p>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+  <script>
+    function heroSearch() {
+      const q = document.getElementById("hero-search").value.trim();
+      if (q) window.location.href = `shop.html?q=${encodeURIComponent(q)}`;
+      else window.location.href = "shop.html";
+    }
+    document.getElementById("hero-search").addEventListener("keydown", e => {
+      if (e.key === "Enter") heroSearch();
+    });
+
+    // Render 4 featured products
+    const featuredGrid = document.getElementById("featured-grid");
+    const featured = products.slice(0, 4);
+    featuredGrid.innerHTML = featured.map(p => `
+      <div class="product-card">
+        <a href="product-detail.html?id=${p.id}">
+          <img src="${p.image}" alt="${p.name}">
+        </a>
+        <div class="card-body">
+          <span class="badge">${p.category}</span>
+          <h3><a href="product-detail.html?id=${p.id}">${p.name}</a></h3>
+          <div class="rating">★★★★☆ <span>${p.rating}</span></div>
+          <div class="card-footer">
+            <strong>$${p.price.toFixed(2)}</strong>
+            <button onclick="addToCart(${p.id})">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    `).join("");
+  </script>
+</body>
+</html>
